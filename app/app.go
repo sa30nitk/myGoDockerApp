@@ -20,7 +20,7 @@ func main() {
     router.HandleFunc("/people/{id}", CreatePeople).Methods("POST")
     router.HandleFunc("/people/{id}", DeletePeople).Methods("DELETE")
 
-    log.Fatal(http.ListenAndServe(":8000", router))
+    http.ListenAndServe(":8080", router)
 }
 
 func GetPeople(w http.ResponseWriter, r *http.Request ) {
